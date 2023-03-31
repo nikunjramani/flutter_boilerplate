@@ -5,7 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/data/models/user.dart';
 import 'package:flutter_boilerplate/data/repositories/authentication_repository.dart';
 import 'package:flutter_boilerplate/generated/l10n.dart';
-import 'package:flutter_boilerplate/services/local_storage_service/local_storage_service.dart';
+import 'package:flutter_boilerplate/services/local_storage_service/shared_preferences_service.dart';
+import 'package:flutter_boilerplate/utils/enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'application_bloc.freezed.dart';
@@ -14,16 +15,16 @@ part 'application_state.dart';
 
 class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
   ApplicationBloc({
-    required LocalStorageService localStorageService,
+    required SharedPreferencesService sharedPreferencesService,
     required AuthenticationRepository authenticationRepository,
   }) : super(const ApplicationState()) {
-    _localStorageService = localStorageService;
+    _localStorageService = sharedPreferencesService;
     on<ApplicationLoaded>(_onLoaded);
     on<ApplicationLocaleChanged>(_onLocaleChanged);
     on<ApplicationDarkModeChanged>(_onDarkModeChanged);
   }
 
-  late LocalStorageService _localStorageService;
+  late SharedPreferencesService _localStorageService;
   late StreamSubscription<AuthenticationStatus>
       _authenticationStatusSubscription;
 

@@ -4,9 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boilerplate/app/bloc/application_bloc.dart';
 import 'package:flutter_boilerplate/common/app_themes.dart';
 import 'package:flutter_boilerplate/configs/app_config.dart';
+import 'package:flutter_boilerplate/data/repositories/authentication_repository.dart';
 import 'package:flutter_boilerplate/generated/l10n.dart';
-import 'package:flutter_boilerplate/injector/injector.dart';
 import 'package:flutter_boilerplate/router/app_router.dart';
+import 'package:flutter_boilerplate/services/local_storage_service/shared_preferences_service.dart';
+import 'package:flutter_boilerplate/utils/enums.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -16,7 +18,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late final ApplicationBloc _bloc;
   late String _locale;
   late bool _isDarkMode;
   late final AppLocalizationDelegate appLocalizationDelegate;
@@ -24,8 +25,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     _locale = AppConfig.defaultLocale;
-    _bloc = Injector.instance<ApplicationBloc>();
-    _bloc.add(const ApplicationLoaded());
     _isDarkMode = true;
     appLocalizationDelegate = const AppLocalizationDelegate();
     super.initState();
@@ -35,12 +34,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ApplicationBloc>.value(
-          value: _bloc,
+        BlocProvider(
+          create: (_) => ApplicationBloc(
+            authenticationRepository: AuthenticationRepository(),
+            sharedPreferencesService: SharedPreferencesService()
+          ),
         ),
       ],
       child: BlocListener<ApplicationBloc, ApplicationState>(
-        bloc: _bloc,
         listener: (context, state) {
           if (state.status == UIStatus.loadSuccess) {
             if (_locale != state.locale) {

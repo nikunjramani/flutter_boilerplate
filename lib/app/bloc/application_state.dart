@@ -10,10 +10,3 @@ class ApplicationState with _$ApplicationState {
     @Default(User.empty) User? user,
   }) = _ApplicationState;
 }
-
-enum UIStatus {
-  initial,
-  loading,
-  loadSuccess,
-  loadFailed,
-}
