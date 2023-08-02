@@ -1,100 +1,209 @@
 import 'package:flutter/material.dart';
 
 class AppThemes {
-  AppThemes._();
-
-  //Primary
-  static const Color _lightPrimaryColor = Color(0xffffffff);
-  static const Color _darkPrimaryColor = Color(0xFF1a222d);
-
-  //Background
-  static const Color _lightBackgroundColor = Color(0xffffffff);
-  static const Color _darkBackgroundColor = Color(0xFF1a222d);
-
-  //Text
-  static const Color _lightTextColor = Color(0xff000000);
-  static const Color _darkTextColor = Color(0xffffffff);
-
-  //Icon
-  static const Color _lightIconColor = Color(0xff000000);
-  static const Color _darkIconColor = Color(0xffffffff);
-
-  //Text themes
-  static const TextTheme _lightTextTheme = TextTheme(
-    headline1: TextStyle(fontSize: 96.0, color: _lightTextColor),
-    headline2: TextStyle(fontSize: 60.0, color: _lightTextColor),
-    headline3: TextStyle(fontSize: 48.0, color: _lightTextColor),
-    headline4: TextStyle(fontSize: 34.0, color: _lightTextColor),
-    headline5: TextStyle(fontSize: 24.0, color: _lightTextColor),
-    headline6: TextStyle(
-        fontSize: 20.0, color: _lightTextColor, fontWeight: FontWeight.w500),
-    subtitle1: TextStyle(fontSize: 16.0, color: _lightTextColor),
-    subtitle2: TextStyle(
-        fontSize: 14.0, color: _lightTextColor, fontWeight: FontWeight.w500),
-    bodyText1: TextStyle(fontSize: 16.0, color: _lightTextColor),
-    bodyText2: TextStyle(fontSize: 14.0, color: _lightTextColor),
-    button: TextStyle(
-        fontSize: 14.0, color: _lightTextColor, fontWeight: FontWeight.w500),
-    caption: TextStyle(fontSize: 12.0, color: _lightTextColor),
-    overline: TextStyle(fontSize: 14.0, color: _lightTextColor),
+  static ThemeData lightTheme = ThemeData(
+      iconTheme: const IconThemeData(
+        color: Colors.blue,
+      ),
+      primarySwatch: Colors.blue,
+      brightness: Brightness.light,
+      appBarTheme: AppBarTheme(
+          titleTextStyle: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w600
+          ),
+          iconTheme: const IconThemeData(
+              color: Colors.black
+          ),
+          backgroundColor: Colors.grey.shade50,
+          elevation: 0
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(10)
+          ),
+          hintStyle: const TextStyle(
+            fontSize: 14,
+          )
+      ),
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+          color: Colors.red
+      ),
+      textTheme: TextTheme(
+          displayLarge: const TextStyle(
+              letterSpacing: -1.5,
+              fontSize: 48,
+              color: Colors.black,
+              fontWeight: FontWeight.bold
+          ),
+          displayMedium: const TextStyle(
+              letterSpacing: -1.0,
+              fontSize: 40,
+              color: Colors.black,
+              fontWeight: FontWeight.bold
+          ),
+          displaySmall: const TextStyle(
+              letterSpacing: -1.0,
+              fontSize: 32,
+              color: Colors.black,
+              fontWeight: FontWeight.bold
+          ),
+          headlineMedium: const TextStyle(
+              letterSpacing: -1.0,
+              color: Colors.black,
+              fontSize: 28,
+              fontWeight: FontWeight.w600
+          ),
+          headlineSmall: const TextStyle(
+              letterSpacing: -1.0,
+              color: Colors.black,
+              fontSize: 24,
+              fontWeight: FontWeight.w500
+          ),
+          titleLarge: const TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.w500
+          ),
+          titleMedium: const TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+              fontWeight: FontWeight.w500
+          ),
+          titleSmall: const TextStyle(
+              color: Colors.black,
+              fontSize: 14,
+              fontWeight: FontWeight.w500
+          ),
+          bodyLarge: TextStyle(
+              color: Colors.grey.shade700,
+              fontSize: 16,
+              fontWeight: FontWeight.w400
+          ),
+          bodyMedium: TextStyle(
+              color: Colors.grey.shade600,
+              fontSize: 14,
+              fontWeight: FontWeight.w400
+          ),
+          labelLarge: const TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+              fontWeight: FontWeight.w600
+          ),
+          bodySmall: TextStyle(
+              color: Colors.grey.shade800,
+              fontSize: 12,
+              fontWeight: FontWeight.w400
+          ),
+          labelSmall: TextStyle(
+            color: Colors.grey.shade700,
+            fontSize: 10,
+            fontWeight: FontWeight.w400,
+          )
+      )
   );
 
-  static const TextTheme _darkTextTheme = TextTheme(
-    headline1: TextStyle(fontSize: 96.0, color: _darkTextColor),
-    headline2: TextStyle(fontSize: 60.0, color: _darkTextColor),
-    headline3: TextStyle(fontSize: 48.0, color: _darkTextColor),
-    headline4: TextStyle(fontSize: 34.0, color: _darkTextColor),
-    headline5: TextStyle(fontSize: 24.0, color: _darkTextColor),
-    headline6: TextStyle(
-        fontSize: 20.0, color: _darkTextColor, fontWeight: FontWeight.w500),
-    subtitle1: TextStyle(fontSize: 16.0, color: _darkTextColor),
-    subtitle2: TextStyle(
-        fontSize: 14.0, color: _darkTextColor, fontWeight: FontWeight.w500),
-    bodyText1: TextStyle(fontSize: 16.0, color: _darkTextColor),
-    bodyText2: TextStyle(fontSize: 14.0, color: _darkTextColor),
-    button: TextStyle(
-        fontSize: 14.0, color: _darkTextColor, fontWeight: FontWeight.w500),
-    caption: TextStyle(fontSize: 12.0, color: _darkTextColor),
-    overline: TextStyle(fontSize: 14.0, color: _darkTextColor),
-  );
-
-  ///Light theme
-  static final ThemeData lightTheme = ThemeData(
-    brightness: Brightness.light,
-    primaryColor: _lightPrimaryColor,
-    scaffoldBackgroundColor: _lightBackgroundColor,
-    appBarTheme: AppBarTheme(
-      color: _lightBackgroundColor,
-      iconTheme: const IconThemeData(color: _lightIconColor),
-      toolbarTextStyle: _lightTextTheme.bodyText2,
-      titleTextStyle: _lightTextTheme.headline6,
-    ),
-    iconTheme: const IconThemeData(
-      color: _lightIconColor,
-    ),
-    textTheme: _lightTextTheme,
-    dividerTheme: const DividerThemeData(
-      color: Colors.grey,
-    ),
-  );
-
-  ///Dark theme
-  static final ThemeData darkTheme = ThemeData(
+  static ThemeData darkTheme = ThemeData(
+    primaryColor: Colors.blue,
+    primarySwatch: Colors.blue,
     brightness: Brightness.dark,
-    primaryColor: _darkPrimaryColor,
-    scaffoldBackgroundColor: _darkBackgroundColor,
-    appBarTheme: AppBarTheme(
-      color: _darkBackgroundColor,
-      iconTheme: const IconThemeData(color: _darkIconColor),
-      toolbarTextStyle: _darkTextTheme.bodyText2,
-      titleTextStyle: _darkTextTheme.headline6,
-    ),
+    scaffoldBackgroundColor: Colors.grey.shade900,
     iconTheme: const IconThemeData(
-      color: _darkIconColor,
+      color: Colors.white,
     ),
-    textTheme: _darkTextTheme,
-    dividerTheme: const DividerThemeData(
-      color: Colors.grey,
+    checkboxTheme: const CheckboxThemeData(
     ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.grey.shade900,
+      elevation: 0,
+      iconTheme: const IconThemeData(
+          color: Colors.white
+      ),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(10)
+        ),
+        hintStyle: const TextStyle(
+          fontSize: 14,
+        )
+    ),
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: Colors.white
+    ),
+    textTheme: TextTheme(
+        displayLarge: TextStyle(
+            letterSpacing: -1.5,
+            fontSize: 48,
+            color: Colors.grey.shade50,
+            fontWeight: FontWeight.bold
+        ),
+        displayMedium: TextStyle(
+            letterSpacing: -1.0,
+            fontSize: 40,
+            color: Colors.grey.shade50,
+            fontWeight: FontWeight.bold
+        ),
+        displaySmall: TextStyle(
+            letterSpacing: -1.0,
+            fontSize: 32,
+            color: Colors.grey.shade50,
+            fontWeight: FontWeight.bold
+        ),
+        headlineMedium: TextStyle(
+            letterSpacing: -1.0,
+            color: Colors.grey.shade50,
+            fontSize: 28,
+            fontWeight: FontWeight.w600
+        ),
+        headlineSmall: TextStyle(
+            letterSpacing: -1.0,
+            color: Colors.grey.shade50,
+            fontSize: 24,
+            fontWeight: FontWeight.w500
+        ),
+        titleLarge: TextStyle(
+            color: Colors.grey.shade50,
+            fontSize: 18,
+            fontWeight: FontWeight.w500
+        ),
+        titleMedium: TextStyle(
+            color: Colors.grey.shade50,
+            fontSize: 16,
+            fontWeight: FontWeight.w500
+        ),
+        titleSmall: TextStyle(
+            color: Colors.grey.shade50,
+            fontSize: 14,
+            fontWeight: FontWeight.w500
+        ),
+        bodyLarge: TextStyle(
+            color: Colors.grey.shade50,
+            fontSize: 16,
+            fontWeight: FontWeight.w400
+        ),
+        bodyMedium: TextStyle(
+            color: Colors.grey.shade50,
+            fontSize: 14,
+            fontWeight: FontWeight.w400
+        ),
+        labelLarge: const TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+            fontWeight: FontWeight.w600
+        ),
+        bodySmall: TextStyle(
+            color: Colors.grey.shade50,
+            fontSize: 12,
+            fontWeight: FontWeight.w500
+        ),
+        labelSmall: TextStyle(
+            color: Colors.grey.shade50,
+            fontSize: 10,
+            fontWeight: FontWeight.w400
+        )
+    ), bottomAppBarTheme: BottomAppBarTheme(color: Colors.grey.shade900),
   );
 }

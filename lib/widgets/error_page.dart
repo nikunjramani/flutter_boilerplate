@@ -1,5 +1,4 @@
-import 'package:flutter_boilerplate/generated/l10n.dart';
-import 'package:flutter/material.dart';
+import '../index.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({super.key});
@@ -7,7 +6,7 @@ class ErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text(S.current.didnt_supported)),
+      body: Center(child: Text(LocalString.current.didnt_supported)),
     );
   }
 }

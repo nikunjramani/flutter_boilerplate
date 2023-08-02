@@ -60,7 +60,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
       emit(state.copyWith(
         status: UIStatus.loading,
       ));
-      await S.load(Locale(event.locale));
+      await LocalString.load(Locale(event.locale));
 
       _localStorageService.setLocale(event.locale);
 

@@ -25,7 +25,7 @@ class _ConfigPageState extends State<ConfigPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.of(context).config),
+        title: Text(LocalString.of(context).config),
       ),
       body: Padding(
         padding: const EdgeInsets.all(AppDimens.basePadding),
@@ -52,7 +52,7 @@ class _ConfigPageState extends State<ConfigPage> {
               onChanged: (value) {
                 _bloc.add(const ApplicationLocaleChanged(locale: 'en'));
               },
-              title: Text(S.current.english),
+              title: Text(LocalString.current.english),
             ),
             RadioListTile<String>(
               value: 'vi',
@@ -60,7 +60,7 @@ class _ConfigPageState extends State<ConfigPage> {
               onChanged: (value) {
                 _bloc.add(const ApplicationLocaleChanged(locale: 'vi'));
               },
-              title: Text(S.current.vietnamese),
+              title: Text(LocalString.current.vietnamese),
             ),
           ],
         );
@@ -79,7 +79,7 @@ class _ConfigPageState extends State<ConfigPage> {
               onChanged: (value) {
                 _bloc.add(ApplicationDarkModeChanged(enable: value));
               },
-              title: Text(S.current.dark_mode),
+              title: Text(LocalString.current.dark_mode),
             )
           ],
         );
