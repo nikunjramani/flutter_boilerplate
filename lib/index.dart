@@ -16,7 +16,6 @@ export 'package:flutter_boilerplate/generated/l10n.dart';
 export 'package:flutter_boilerplate/utils/global.dart';
 export 'package:flutter_boilerplate/utils/extension/date_time_extension.dart';
 export 'package:flutter_boilerplate/common/responsive.dart';
-export 'package:flutter_boilerplate/generated/assets.gen.dart';
 export 'package:flutter_boilerplate/utils/platform.dart';
 export 'package:another_flushbar/flushbar.dart';
 export 'package:flutter/services.dart';
