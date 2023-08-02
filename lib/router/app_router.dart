@@ -1,7 +1,8 @@
 import 'package:flutter_boilerplate/app/config_page.dart';
-import 'package:flutter_boilerplate/screens/home/home_page.dart';
+import 'package:flutter_boilerplate/screens/home/view/home_page.dart';
 import 'package:flutter_boilerplate/screens/login/view/login_page.dart';
 import 'package:flutter_boilerplate/screens/splash/splash_screen.dart';
+import 'package:flutter_boilerplate/services/navigation_service.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
@@ -14,6 +15,8 @@ class AppRouter {
 
   static GoRouter get router => _router;
   static final _router = GoRouter(
+    debugLogDiagnostics: true,
+    navigatorKey: CustomNavigationService.navigatorKey,
     routes: <GoRoute>[
       GoRoute(
         path: '/',

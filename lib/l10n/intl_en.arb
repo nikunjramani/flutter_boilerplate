@@ -19,5 +19,6 @@
   "invalid_username" : "Invalid Username",
   "password" : "Password",
   "invalid_password" : "Password",
-  "authentication_failure" : "Authentication Failure"
+  "authentication_failure" : "Authentication Failure",
+  "server_error" : "Server Error"
 }
