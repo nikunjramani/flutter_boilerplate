@@ -10,7 +10,7 @@
 
 # Flutter Boilerplate Project
 
-A boilerplate project created in flutter using Bloc. Depend on code generation.
+A boilerplate project created in flutter using Bloc. Depend on code generation. before you work on this project you need to know following package usage
 ## Features
 
 * State management and examples
@@ -25,7 +25,8 @@ A boilerplate project created in flutter using Bloc. Depend on code generation.
 * Multi languages
 * Clean architecture
 
-Some packages:
+
+Before proceeding to work on this project, it is essential to understand how the following packages are used:
 - [Freezed](https://pub.dev/packages/freezed)
 - [Flutter Bloc](https://pub.dev/packages/flutter_bloc)
 - [Flutter gen](https://pub.dev/packages/flutter_gen)
