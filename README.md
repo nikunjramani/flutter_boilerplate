@@ -59,7 +59,10 @@ flutter pub run change_app_package_name:main com.example.new_package_name
 flutter pub run rename_app_plus:main all="New App Name"
 ```
 
-This two commands will update app name and packages name of the project
+Executing this two command will update the app name and packages name across all platforms, including Android, iOS, Web, Windows, Linux, and macOS.
+
+
+
 Go to project root and execute the following command in terminal to get the required dependencies and generate languages, freezed, flutter gen:
 
 ```cmd
@@ -103,6 +106,21 @@ For example, if your old package name was `old_package_name`, and you're renamin
 
 With these steps, you will have successfully updated the package name and project description in your `pubspec.yml` file and also updated all the imports in your Dart code to reflect the changes.
 
+
+## Update App Icon
+Assuming you have your new app icon in the appropriate format (e.g., PNG) and ready to use, 
+here's how you can update your app icon and rename the files
+1. Place your new icon file (let's say "your_new_icon.png") in the "assets/icons/" folder of your app project.
+2. Rename the icon files to "ic_launcher.png" now.
+
+The following commands need to be executed by the developer to update the app icons.
+
+```cmd
+flutter pub get
+flutter pub run flutter_launcher_icons
+```
+
+Executing this command will update the app icons across all platforms, including Android, iOS, Web, Windows, Linux, and macOS.
 
 **you make changes to the freezed file, assets, or API-related files, you would need to run following commands**
 
