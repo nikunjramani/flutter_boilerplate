@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/common/app_themes.dart';
 
 class NetworkCheck {
   // ignore: cancel_subscriptions
