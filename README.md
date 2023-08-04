@@ -165,7 +165,8 @@ Private variables and methods in dart are prefixed with an underscore.
 
 (don’t use it for anything else to avoid confusion)
 
-```# just a private method name with "_"
+```
+# just a private method name with "_"
 void _privateMethod() {
   ...
 }
