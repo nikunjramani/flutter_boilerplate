@@ -129,10 +129,10 @@ Executing this command will update the app icons across all platforms, including
 Follow Naming Conventions
 Make sure to always follow the naming conventions proposed by dart/flutter.
 
-snake_case_with_underscores: file and folder names
+**snake_case_with_underscores: file and folder names**
 Example : test_file.dart
 
-UpperCamelCase: classes, type definitions, enums, extensions
+**UpperCamelCase: classes, type definitions, enums, extensions**
 
 ```
 # classes
@@ -146,7 +146,7 @@ enum Status { open, pending, done }
 extension NumberParsing<T> on String<T> { ...
 ```
 
-lowerCamelCase: variables, constants, class members, parameters
+**lowerCamelCase: variables, constants, class members, parameters**
 ```
 # variables
 String myString = 'What a wonderful day';
@@ -158,8 +158,7 @@ void doMagic(firstParameter = 3) {
 ```
 
 
-
-“_” prefix: private variable names and methods
+**“_” prefix: private variable names and methods**
 
 Private variables and methods in dart are prefixed with an underscore.
 
@@ -176,13 +175,13 @@ class Song {
 }
 ```
 
-Always specify types
+**Always specify types**
 ALWAYS set the type while you write and define the variable and don’t push it to a later moment.
 If you use the variable and then define the type a day/a week/a decade later, you will not know exactly what edge cases you had in mind.
 No matter whether it is just a string, number, object-class, or an enum. Define it before you even finish the initialization command and then use it.
 
 
-Check instead of “force cast” types
+**Check instead of “force cast” types**
 Dart is pretty smart about inferring types, but sometimes the system is wrong and we know better.
 ```
 // check if the type is a certain type
@@ -190,19 +189,19 @@ if (melody is Song)
   song.title = 'Stille Nacht';
 ```
 
-Use const for static Widgets
+**Use const for static Widgets**
 Flutter is pretty fast. It implements some smart logic to see whether something has changed and whether it should rerender. The bigger the application gets, however, the more of these checks for changed data have to be made internally.
 
-Use flutters null safety features
+**Use flutters null safety features**
 If your variable could be nullable , you have to append the question mark to the type definition.
 
 
-Most important rule: Use strict analysis rules
+**Most important rule: Use strict analysis rules**
 Run flutter analyze commands to analyze your code
 It basically analyzes your code for faulty code styles, code smells, and problems.
 
 
-For More Information about code style you can read documentation here
+**For More Information about code style you can read documentation here
 [Code Style](https://dart.dev/effective-dart/style)
 
 **you make changes to the freezed file, assets, or API-related files, you would need to run following commands**
