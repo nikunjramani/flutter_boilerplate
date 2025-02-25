@@ -1,44 +1,40 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_boilerplate/pages/test/bloc/test_bloc.dart';
 
-import '../bloc/test_bloc.dart';
-import '../bloc/test_event.dart';
-import 'test_view.dart';
+import 'package:flutter_boilerplate/index.dart';
 
 class TestPage extends StatelessWidget {
   const TestPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (BuildContext context) => Scaffold(
-      body: SafeArea(
-        child: BlocListener<TestBloc, TestState>(
-          listener: (context, state) {
-            // TODO: implement listener}
-          },
+    final themeBloc = getIt<ThemeBloc>();
+    final localizationBloc = getIt<LocalizationBloc>();
+    final testBloc = getIt<TestBloc>();
+
+    return BlocProvider(
+      create: (BuildContext context) => testBloc,
+      child: Scaffold(
+        body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              BlocBuilder<TestBloc, TestState>(
-                builder: (context, state) {
-                  return Container();
+              ElevatedButton(
+                onPressed: () {
+                  themeBloc.add(ToggleTheme());
                 },
+                child: Text("Change Theme"),
               ),
-              BlocSelector<TestBloc, TestState, dynamic>(
-                // TODO: change dynamic type
-                selector: (state) {
-                  // TODO: return selected state based on the provided state.
-                  return state.name;
+              ElevatedButton(
+                onPressed: () {
+                  Locale newLocale = (Localizations.localeOf(context).languageCode == 'en') ? const Locale('es') : const Locale('en');
+                  localizationBloc.add(ChangeLanguage(newLocale));
                 },
-                builder: (context, state) {
-                  // TODO: return widget here based on the selected state.
-                  return Text(state.toString());
-                },
-              )
+                child: Text("Change Language"),
+              ),
             ],
           ),
         ),
       ),
-    ), child: const TestView());
-
+    );
   }
 }
