@@ -28,9 +28,7 @@ class ApiError {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-    return other is ApiError &&
-        other.statusCode == statusCode &&
-        other.errors == errors;
+    return other is ApiError && other.statusCode == statusCode && other.errors == errors;
   }
 
   @override

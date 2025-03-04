@@ -1,4 +1,3 @@
-
 import 'package:flutter_boilerplate/index.dart';
 
 class MyApp extends StatefulWidget {
@@ -9,7 +8,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();
@@ -18,10 +16,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => getIt<ThemeBloc>()),
-        BlocProvider(create: (_) => getIt<LocalizationBloc>()),
-      ],
+      providers: [BlocProvider(create: (_) => getIt<ThemeBloc>()), BlocProvider(create: (_) => getIt<LocalizationBloc>())],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, themeState) {
           return BlocBuilder<LocalizationBloc, LocalizationState>(

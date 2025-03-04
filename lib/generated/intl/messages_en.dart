@@ -21,9 +21,9 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "authentication_failure":
-            MessageLookupByLibrary.simpleMessage("Authentication Failure"),
-        "server_error": MessageLookupByLibrary.simpleMessage("Server Error")
-      };
+    "authentication_failure": MessageLookupByLibrary.simpleMessage("Authentication Failure"),
+    "server_error": MessageLookupByLibrary.simpleMessage("Server Error"),
+  };
 }

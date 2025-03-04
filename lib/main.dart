@@ -1,8 +1,6 @@
-
 import 'package:logger/logger.dart';
 
 import 'index.dart';
-
 
 Future<void> main() async {
   await runZonedGuarded(() async {
@@ -12,8 +10,6 @@ Future<void> main() async {
     Logger.level = Level.all;
     AppConfig.init();
 
-
     runApp(const MyApp());
-  }, (error, stack) {
-  });
+  }, (error, stack) {});
 }

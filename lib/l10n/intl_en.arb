@@ -1,4 +1,4 @@
 {
-  "authentication_failure" : "Authentication Failure",
-  "server_error" : "Server Error"
+  "authentication_failure": "Authentication Failure",
+  "server_error": "Server Error"
 }

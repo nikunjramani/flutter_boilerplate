@@ -5,12 +5,8 @@ class TestState extends Equatable {
 
   const TestState({required this.name});
 
-  TestState copyWith({
-    String? name,
-  }) {
-    return TestState(
-      name: name ?? this.name,
-    );
+  TestState copyWith({String? name}) {
+    return TestState(name: name ?? this.name);
   }
 
   @override

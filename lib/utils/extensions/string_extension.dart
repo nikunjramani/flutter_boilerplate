@@ -1,4 +1,3 @@
-
 extension StringExtension on String {
   String get removeDashes => replaceAll('-', '');
 
@@ -31,5 +30,4 @@ extension StringExtension on String {
     }
     return formattedText;
   }
-
 }

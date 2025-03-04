@@ -1,8 +1,3 @@
 class ApiEndPoints {
-
-  static var getFacebookPage="me/accounts";
-
-
-
-
+  static var getFacebookPage = "me/accounts";
 }
